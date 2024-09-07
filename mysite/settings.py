@@ -51,6 +51,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+STORAGES = {
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    }
+}
+
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
@@ -120,6 +126,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_ROOT = BASE_DIR / 'static'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+#MEDIA_URL = '/media/'
+&MEDIA_ROOT = BASE_DIR / 'uploads'
 
 
 # Default primary key field type
