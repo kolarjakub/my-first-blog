@@ -40,13 +40,11 @@ from django.contrib import admin
 from django.urls import path, re_path
 
 urlpatterns = [
-    # Examples:
-    # url(r'^$', 'mysite.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     #path('admin', admin.site.urls),
     #path(r'', include('blog.urls')),
-    re_path('^$', include('blog.urls')),
-    re_path('^admin/',admin.site.urls),
 
+    #re_path('^$', include('blog.urls')),
+
+    re_path('', include('blog.urls')),
+    re_path('^admin/',admin.site.urls),
 ]
